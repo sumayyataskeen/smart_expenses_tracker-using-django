@@ -1,0 +1,20 @@
+{% extends "expenses/base.html" %}
+{% block content %}
+<h2>Welcome {{ user.username }} 👋</h2>
+<h3>Total Spent: ₹{{ total }}</h3>
+
+<br>
+
+<table border="1" width="60%" cellpadding="8">
+<tr><th>Title</th><th>Category</th><th>Amount</th><th>Date</th></tr>
+{% for e in expenses %}
+<tr>
+<td>{{ e.title }}</td>
+<td>{{ e.category }}</td>
+<td>₹{{ e.amount }}</td>
+<td>{{ e.date }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

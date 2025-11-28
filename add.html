@@ -1,0 +1,21 @@
+{% extends "expenses/base.html" %}
+{% block content %}
+<h2>Add Expense</h2>
+
+<form method="POST" style="margin-top:10px">
+    {% csrf_token %}
+    <input name="title" placeholder="Title" required><br><br>
+    <input name="amount" placeholder="Amount" type="number" required><br><br>
+
+    <select name="category">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Shopping</option>
+        <option>Bills</option>
+        <option>Others</option>
+    </select><br><br>
+
+    <button type="submit">Save Expense</button>
+</form>
+
+{% endblock %}
